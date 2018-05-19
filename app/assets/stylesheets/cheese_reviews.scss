@@ -1,0 +1,76 @@
+// Place all the styles related to the CheeseReviews controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.review-header {
+  display: flex;
+  justify-content: space-between;
+  background-color: #E7E7E7;
+  align-items: center;
+  margin-top: 25px;
+  h3 {
+    color: #c60;
+    font-size: 22px;
+    margin-left: 15px;
+  }
+  .review-btn {
+    font-family: helvetica;
+    border: 2px solid #c60;
+    border-radius: 3px;
+    float: right;
+    color: #c60;
+    padding: 6px 12px 4px 12px;
+    margin-right: 15px;
+    height: 20px;
+    font-size: 16px;
+    box-sizing: content-box;
+  }
+  .review-btn:hover {
+    background-color: #c60;
+    color: white;
+  }
+}
+
+.review-item {
+  display: flex;
+  margin-top: 8px;
+  background-color: #FCFBF9;
+  padding: 15px;
+  justify-content: space-around;
+}
+
+.line2-review {
+  display: flex;
+  justify-content: flex-start;
+  width: 60%;
+}
+blockquote {
+  font-family: Times;
+  font-size: 18px;
+  -webkit-margin-before: 10px;
+  -webkit-margin-after: 10px;
+}
+
+.quote {
+  font-size: 25px;
+}
+
+.line1-review {
+  display: flex;
+  align-items: center;
+  span {
+    position: relative;
+    top: auto;
+    left: auto;
+    align-self: center;
+    top: 5px;
+    left: 10px;
+  }
+  .star {
+    height: 25px;
+    margin-left: 3px;
+  }
+  .inner {
+    display: inline-block;
+    vertical-align: middle;
+  }
+}
