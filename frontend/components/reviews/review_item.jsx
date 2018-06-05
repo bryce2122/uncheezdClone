@@ -4,6 +4,7 @@ import Rating from 'react-rating';
 
 const ReviewItem = ({ review, user }) => {
   let thisReview;
+  console.log("2122",review);
   if (review.review === "") {
     thisReview = "";
   } else {
@@ -15,7 +16,7 @@ const ReviewItem = ({ review, user }) => {
       </blockquote>
     </div>;
   }
-
+   console.log("USER",user);
   return (
     <div className="review-item">
       <div className="line1-review">

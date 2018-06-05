@@ -1,5 +1,5 @@
 class Api::CheesesController < ApplicationController
-  before_action :set_cheese, only: [:edit, :update, :destroy]
+  before_action :set_cheese, only: [:edit, :update, :destroy,:show]
 
   # GET /cheeses
   # GET /cheeses.json
@@ -24,18 +24,17 @@ class Api::CheesesController < ApplicationController
   # POST /cheeses
   # POST /cheeses.json
   def create
-    p("PAR",params)
+    p("PASD",params);
     @cheese = Cheese.new(cheese_params)
-
     if @cheese.save!
-      p("URL",@cheese.cheese_pic.url)
-      @cheese.image_path = "https://s3-us-west-2#{@cheese.cheese_pic.url[4..-1]}"
-      @cheese.save
+      unless @cheese.cheese_pic_file_name.nil?
+        @cheese.image_path = "https://s3-us-west-2#{@cheese.cheese_pic.url[4..-1]}"
+        @cheese.save
+      end
       render "api/cheeses/show"
     else
       render json: @cheese.errors, status: :unprocessable_entity
     end
-
   end
 
   # PATCH/PUT /cheeses/1

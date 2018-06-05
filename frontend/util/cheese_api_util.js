@@ -30,7 +30,7 @@ export const createCheese = (cheese) => (
 // );
 
 export const updateCheese = (cheese,id) => {
-  console.log("ID",id);
+  
   return $.ajax({
     method: 'PATCH',
     url: `api/cheeses/${id}`,

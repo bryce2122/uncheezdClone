@@ -28,7 +28,10 @@ class CheeseShow extends React.Component {
   render () {
     let ratings = [];
     Object.values(this.props.reviews).forEach(obj => {
-      if(obj.cheese_id === this.props.match.params.cheeseId) {
+      console.log("33",obj);
+      console.log("match",this.props.match.params.cheeseId);
+      if(obj.cheese_id.toString() === this.props.match.params.cheeseId) {
+        console.log("HELLOr");
         ratings.push(obj.rating);
       }
     });
@@ -37,8 +40,10 @@ class CheeseShow extends React.Component {
 
     },0) / ratings.length).toFixed(2);
     let theAvgRating;
-    if (avgRating) {
+    if (!isNaN(avgRating)) {
       theAvgRating = `(${avgRating})`;
+    }else{
+      theAvgRating = "";
     }
     const cheese = this.props.cheese;
     return (
